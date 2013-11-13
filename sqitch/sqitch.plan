@@ -1,0 +1,6 @@
+%syntax-version=1.0.0-b2
+%project=builderlist
+%uri=https://github.com/phillipadsmith/builderlist.thetyee.ca
+
+schema 2013-11-13T17:36:26Z Phillip Smith <ps@phillipadsmith.com> # Schema for builderlist
+builders [schema] 2013-11-13T17:40:26Z Phillip Smith <ps@phillipadsmith.com> # Create table for individual builders
