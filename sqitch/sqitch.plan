@@ -4,3 +4,5 @@
 
 schema 2013-11-13T17:36:26Z Phillip Smith <ps@phillipadsmith.com> # Schema for builderlist
 builders [schema] 2013-11-13T17:40:26Z Phillip Smith <ps@phillipadsmith.com> # Create table for individual builders
+@v1.0.0 2015-03-12T21:44:30Z Phillip Smith <ps@phillipadsmith.com># Adding builder_sub_date to schema
+builders [builders@v1.0.0] 2015-03-12T21:47:17Z Phillip Smith <ps@phillipadsmith.com># Adding a column for builder_sub_date
