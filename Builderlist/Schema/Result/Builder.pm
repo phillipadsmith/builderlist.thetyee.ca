@@ -57,6 +57,12 @@ __PACKAGE__->table("builders");
   data_type: 'integer'
   is_nullable: 0
 
+=head2 builder_sub_date
+
+  data_type: 'timestamp'
+  is_nullable: 1
+  timezone: 'America/Vancouver'
+
 =cut
 
 __PACKAGE__->add_columns(
@@ -68,6 +74,12 @@ __PACKAGE__->add_columns(
   { data_type => "text", is_nullable => 0 },
   "builder_is_anonymous",
   { data_type => "integer", is_nullable => 0 },
+  "builder_sub_date",
+  {
+    data_type   => "timestamp",
+    is_nullable => 1,
+    timezone    => "America/Vancouver",
+  },
 );
 
 =head1 PRIMARY KEY
@@ -83,8 +95,8 @@ __PACKAGE__->add_columns(
 __PACKAGE__->set_primary_key("subscriber_id");
 
 
-# Created by DBIx::Class::Schema::Loader v0.07036 @ 2013-11-13 12:04:45
-# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:6tb/D8diH4pbONymek6syQ
+# Created by DBIx::Class::Schema::Loader v0.07042 @ 2015-03-12 15:27:16
+# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:ZUBcO0oiaZhkweewFr5J+w
 
 
 # You can replace this text with custom code or comments, and it will be preserved on regeneration
