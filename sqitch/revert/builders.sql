@@ -1,7 +1,10 @@
--- Revert builders
+-- Deploy builders
+-- requires: schema
 
 BEGIN;
 
-   DROP TABLE builderlist.builders;
+   SET client_min_messages = 'warning';
+
+   drop TABLE builderlist.builders;
 
 COMMIT;

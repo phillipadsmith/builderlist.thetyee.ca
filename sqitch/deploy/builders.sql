@@ -5,11 +5,6 @@ BEGIN;
 
    SET client_min_messages = 'warning';
 
-   CREATE TABLE builderlist.builders (
-       subscriber_id         int PRIMARY KEY NOT NULL,
-       first_name            text NOT NULL,
-       last_name             text NOT NULL,
-       builder_is_anonymous  int NOT NULL
-    ); 
+   ALTER TABLE builderlist.builders ADD COLUMN  builder_sub_date timestamp NULL;
 
 COMMIT;
