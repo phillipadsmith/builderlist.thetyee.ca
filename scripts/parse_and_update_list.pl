@@ -12,6 +12,9 @@
 #      CREATED: 12/11/2013 10:42:04
 #===============================================================================
 
+use FindBin;
+use lib "$FindBin::Bin/../local/lib/perl5";
+
 use Modern::Perl '2013';
 use Builderlist::Schema;
 use Mojolicious::Lite;
@@ -19,6 +22,7 @@ use Text::CSV_XS;
 use Try::Tiny;
 use Carp;
 use Data::Dumper;
+use Time::ParseDate;
 
 # Get the configuration
 my $mode = $ARGV[0] || 'development';
@@ -52,12 +56,19 @@ while ( my $row = $csv->getline_hr( $fh ) ) {
         $first = 'Anonymous';
         $last  = 'Supporter';
     };
-
+    # Date
+    my $builder_sub_date = $row->{'builder_sub_date'};
+    my $builder_sub_dt;
+    if ( $builder_sub_date ) {
+        my $seconds_since_jan1_1970 = parsedate($builder_sub_date);
+        $builder_sub_dt = DateTime->from_epoch(epoch => $seconds_since_jan1_1970);
+    }
     my $doc = {
         subscriber_id        => $row->{'subscriber_id'},
         first_name           => $first,
         last_name            => $last,
         builder_is_anonymous => $anon,
+        builder_sub_date     => $builder_sub_dt
     };
 
     my $result = _upsert( $doc );

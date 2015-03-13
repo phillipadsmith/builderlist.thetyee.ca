@@ -4,3 +4,6 @@ app.development.json
 app.preview.json
 schema.conf
 sqitch.conf
+.DS_Store
+local
+cpanfile.snapshot
